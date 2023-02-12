@@ -1,4 +1,4 @@
-//import static org.junit.*;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import java.util.ArrayList;
@@ -45,6 +45,23 @@ public class PersonTest {
         double[] resultadoEsperado = {30.0, 0.0};
         double[] resultadoDado = p1.avergareAgePerGender(persons);
         assertArrayEquals(resultadoEsperado, resultadoDado, 0.01);
+    }
+    @Test
+    public void testNombreBien() {
+        Person p = new Person("Juan", 30, "Male");
+        assertEquals("Juan", p.name());
+    }
+
+    @Test
+    public void testEdadBien() {
+        Person p = new Person("Juan", 30, "Male");
+        assertEquals(30, p.age());
+    }
+
+    @Test
+    public void testGeneroBien() {
+        Person p = new Person("Juan", 30, "Male");
+        assertEquals("Male", p.gender());
     }
 }
 
