@@ -41,14 +41,18 @@ public class Person {
                     fem.add(persons.get(i).age());
                 }
             }
-            for(int i=0; i<masc.size();i++){
-                avgMale+= masc.get(i);
+            if(!masc.isEmpty()) {
+                for(int i=0; i<masc.size();i++){
+                    avgMale+= masc.get(i);
+                }
+                res[0] = avgMale/masc.size();
             }
-            for(int i=0; i<fem.size();i++){
-                avgFem+= fem.get(i);
+            if (!fem.isEmpty()) {
+                for(int i=0; i<fem.size();i++){
+                    avgFem+= fem.get(i);
+                }
+                res[1] = avgFem/fem.size();
             }
-            res[0] = avgMale/masc.size();
-            res[1] = avgFem/fem.size();
         }
         return res;
     }
